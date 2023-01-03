@@ -27,15 +27,14 @@ Router.post('/',(req,res)=>{
     const newMembers={
           
         id:4,
-        name:"Asim",
-        email:'nauman@gmail.com',
+        name:req.body.name,
+        email:req.body.email,
       subjects:['Javascript','C++','OOP']
 
       } 
 
       persons.push(newMembers)
-      res.json(persons)
-
+      res.redirect('/')
 });
 //put request
 Router.put('/:id',(req,res)=>{
